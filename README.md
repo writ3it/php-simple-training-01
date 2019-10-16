@@ -1,2 +1,24 @@
 # php-simple-training-01
 Simple php training app
+
+## Testing
+
+Test script will skip tests methods annotaed with @group notImplementedYetTest.
+
+```bash 
+composer test
+```
+
+## Task - Polish version
+
+Twoim celem jest zaliczenie wszystkich testów jednostkowych (również tych oznaczonych anotacją notImplementedYetTest).   
+Aby to osiągnąć należy zaimplementować dwie klasy:
+
+- PT01\Operations\Multiplication
+- PT01\Exceptions\InvalidComponentsShapeException
+
+Dodatkowo należy zaimplementować test, który będzie weryfikował czy klasa *Multiplication* rzuca wyjątek *InvalidComponentsShapeException* gdy czynniki mnożenia mają niewłaściwe wymiary. 
+
+Algorytm mnożenie jest opisany tutaj - ["obliczanie z definicji"](https://pl.wikipedia.org/wiki/Mno%C5%BCenie_macierzy#Obliczanie_z_definicji).
+
+
