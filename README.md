@@ -20,6 +20,7 @@ Aby to osiągnąć należy zaimplementować dwie klasy:
 **Pamiętaj o**:
 - solid
 - testowaniu
+- composer
 - objaśniaj co robisz
 
 #### Zadanie dodatkowe:
