@@ -2,6 +2,8 @@
 
 namespace PT01\Matrices;
 
+use PT01\Exceptions\OutOfRangeException;
+
 interface MatrixInterface
 {
     public function __construct(MatrixShape $shape);
@@ -45,4 +47,13 @@ interface MatrixInterface
      * @return integer[]
      */
     public function getRowsIndices(): array;
+
+
+    /**
+     * Sets values by array
+     * @param array $data
+     * @return MatrixInterface
+     * @throws OutOfRangeException
+     */
+    public function fillWithArray(array $data): MatrixInterface;
 }

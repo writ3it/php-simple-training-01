@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: writ3it
- * Date: 16.10.19
- * Time: 23:00
- */
 
 namespace PT01\Matrices;
 

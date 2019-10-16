@@ -28,8 +28,9 @@ class Matrix implements MatrixInterface
 
     private static function createEmptyArray(MatrixShape $shape)
     {
-        $emptyColumn = array_fill(0, $shape->getHeight(), 0);
-        return array_fill(0, $shape->getWidth(), $emptyColumn); //create columns
+        //for readability outside class, coords are crossed
+        $emptyColumn = array_fill(0, $shape->getWidth(), 0);
+        return array_fill(0, $shape->getHeight(), $emptyColumn); //create columns
     }
 
     /**
@@ -42,7 +43,8 @@ class Matrix implements MatrixInterface
     public function get(int $i, int $j): float
     {
         $this->checkCoordinates($i, $j);
-        return $this->data[$i][$j];
+        //for readability outside class, coords are crossed
+        return $this->data[$j][$i];
     }
 
     /**
@@ -69,7 +71,8 @@ class Matrix implements MatrixInterface
     public function set(int $i, int $j, float $value): MatrixInterface
     {
         $this->checkCoordinates($i, $j);
-        $this->data[$i][$j] = $value;
+        //for readability outside class, coords are crossed
+        $this->data[$j][$i] = $value;
         return $this;
     }
 
@@ -106,6 +109,22 @@ class Matrix implements MatrixInterface
     public function getRowsIndices(): array
     {
         return range(0, $this->shape->getHeight()-1, 1);
+    }
+
+    /**
+     * Sets values by array
+     * @param array $data
+     * @return MatrixInterface
+     * @throws OutOfRangeException
+     */
+    public function fillWithArray(array $data): MatrixInterface
+    {
+        foreach ($data as $i => $column) {
+            foreach ($column as $j => $value) {
+                $this->set($i, $j, $value);
+            }
+        }
+        return $this;
     }
 
 }

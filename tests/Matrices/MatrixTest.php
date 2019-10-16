@@ -43,12 +43,32 @@ class MatrixTest extends TestCase
         $A->set(0, 0, 0.5);
         $A->set(1, 1, 0.5);
         $A->set(2, 2, 0.5);
+        $this->checkArrayDiagonalValues($A, 0, 0.5);
+    }
+
+    /**
+     * @throws \PT01\Exceptions\OutOfRangeException
+     */
+    public function testSetValuesByArray()
+    {
+        $A = new Matrix(new MatrixShape(3, 3));
+        $A->fillWithArray([
+            [0.5, 0, 0],
+            [0, 0.5, 0],
+            [0, 0, 0.5]
+        ]);
+        $this->checkArrayDiagonalValues($A, 0, 0.5);
+    }
+
+
+    private function checkArrayDiagonalValues(Matrix $A, float $outsideValue, float $diagonalValue)
+    {
         foreach ($A->getColumnsIndices() as $i) {
             foreach ($A->getRowsIndices() as $j) {
                 if ($i == $j) {
-                    $this->assertEquals(0.5, $A->get($i, $j), "cell [{$i},{$j}] =/= 0.5");
+                    $this->assertEquals($diagonalValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$diagonalValue}");
                 } else {
-                    $this->assertEquals(0, $A->get($i, $j), "cell [{$i},{$j}] =/= 0");
+                    $this->assertEquals($outsideValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$outsideValue}");
                 }
             }
         }
