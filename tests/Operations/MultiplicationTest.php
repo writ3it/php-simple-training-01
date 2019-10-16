@@ -18,7 +18,6 @@ use PT01\Operations\Multiplication;
 class MultiplicationTest extends TestCase
 {
     /**
-     * @group notImplementedYetTest
      * @throws \PT01\Exceptions\OutOfRangeException
      */
     public function testSimpleMultiplication_example01()
@@ -58,7 +57,6 @@ class MultiplicationTest extends TestCase
     }
 
     /**
-     * @group notImplementedYetTest
      * @throws \PT01\Exceptions\OutOfRangeException
      */
     public function testSimpleMultiplication_example02()
@@ -69,7 +67,7 @@ class MultiplicationTest extends TestCase
         ];
 
         $B = [
-            [3, 1],
+            [3, -1],
             [7, 4]
         ];
 

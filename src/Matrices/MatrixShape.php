@@ -45,12 +45,12 @@ class MatrixShape
 
     /**
      * Check that coordinates are inside matrix
-     * @param int $i
-     * @param int $j
+     * @param int $i row
+     * @param int $j column
      * @return bool
      */
     public function isInsideMatrix(int $i, int $j)
     {
-        return $i>=0 && $j>=0 && $i<$this->width && $j<$this->height;
+        return $i >= 0 && $j >= 0 && $i < $this->height && $j < $this->width;
     }
 }
