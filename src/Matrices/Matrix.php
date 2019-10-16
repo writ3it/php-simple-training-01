@@ -70,6 +70,7 @@ class Matrix implements MatrixInterface
     {
         $this->checkCoordinates($i, $j);
         $this->data[$i][$j] = $value;
+        return $this;
     }
 
     /**
