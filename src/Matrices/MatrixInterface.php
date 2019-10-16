@@ -33,4 +33,16 @@ interface MatrixInterface
      * @return array
      */
     public function toArray(): array;
+
+    /**
+     * Returns array of columns coordinates.
+     * @return integer[]
+     */
+    public function getColumnsIndices(): array;
+
+    /**
+     * Returns array of rows coordinates.
+     * @return integer[]
+     */
+    public function getRowsIndices(): array;
 }

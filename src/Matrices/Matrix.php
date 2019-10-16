@@ -4,6 +4,11 @@ namespace PT01\Matrices;
 
 use PT01\Exceptions\OutOfRangeException;
 
+/**
+ * Class Matrix
+ * The matrix data structure
+ * @package PT01\Matrices
+ */
 class Matrix implements MatrixInterface
 {
     /**
@@ -97,7 +102,7 @@ class Matrix implements MatrixInterface
      * Returns array of rows coordinates.
      * @return integer[]
      */
-    public function getRowsIndices()
+    public function getRowsIndices(): array
     {
         return range(0, $this->shape->getHeight()-1, 1);
     }
