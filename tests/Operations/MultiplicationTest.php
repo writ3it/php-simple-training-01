@@ -18,6 +18,7 @@ use PT01\Operations\Multiplication;
 class MultiplicationTest extends TestCase
 {
     /**
+     * @group notImplementedYetTest
      * @throws \PT01\Exceptions\OutOfRangeException
      */
     public function testSimpleMultiplication_example01()
@@ -57,6 +58,7 @@ class MultiplicationTest extends TestCase
     }
 
     /**
+     * @group notImplementedYetTest
      * @throws \PT01\Exceptions\OutOfRangeException
      */
     public function testSimpleMultiplication_example02()
