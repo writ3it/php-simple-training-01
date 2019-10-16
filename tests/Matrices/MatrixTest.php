@@ -29,7 +29,7 @@ class MatrixTest extends TestCase
         $A = new Matrix(new MatrixShape(3, 4));
         foreach ($A->getColumnsIndices() as $i) {
             foreach ($A->getRowsIndices() as $j) {
-                $this->assertEquals(0, $A->get($i, $j), "cell [{$i},{$j}] =/= 0");
+                $this->assertEquals(0, $A->get($j, $i), "cell [{$i},{$j}] =/= 0");
             }
         }
     }
@@ -51,9 +51,9 @@ class MatrixTest extends TestCase
         foreach ($A->getColumnsIndices() as $i) {
             foreach ($A->getRowsIndices() as $j) {
                 if ($i == $j) {
-                    $this->assertEquals($diagonalValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$diagonalValue}");
+                    $this->assertEquals($diagonalValue, $A->get($j, $i), "cell [{$i},{$j}] =/= {$diagonalValue}");
                 } else {
-                    $this->assertEquals($outsideValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$outsideValue}");
+                    $this->assertEquals($outsideValue, $A->get($j, $i), "cell [{$i},{$j}] =/= {$outsideValue}");
                 }
             }
         }

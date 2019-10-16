@@ -10,16 +10,16 @@ interface MatrixInterface
 
     /**
      * Get value of i,j cell in matrix.
-     * @param int $i
-     * @param int $j
+     * @param int $i row
+     * @param int $j column
      * @return float
      */
     public function get(int $i, int $j): float;
 
     /**
      * Set value of i,j cell in matrix.
-     * @param int $i
-     * @param int $j
+     * @param int $i row
+     * @param int $j column
      * @param float $value
      * @return MatrixInterface
      */

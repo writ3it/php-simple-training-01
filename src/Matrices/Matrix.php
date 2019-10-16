@@ -43,14 +43,13 @@ class Matrix implements MatrixInterface
     public function get(int $i, int $j): float
     {
         $this->checkCoordinates($i, $j);
-        //for readability outside class, coords are crossed
-        return $this->data[$j][$i];
+        return $this->data[$i][$j];
     }
 
     /**
      * Throw exception when coords are out of range
-     * @param int $i
-     * @param int $j
+     * @param int $i row
+     * @param int $j column
      * @throws OutOfRangeException
      */
     private function checkCoordinates(int $i, int $j)
@@ -62,8 +61,8 @@ class Matrix implements MatrixInterface
 
     /**
      * Set value of i,j cell in matrix.
-     * @param int $i
-     * @param int $j
+     * @param int $i row
+     * @param int $j column
      * @param float $value
      * @return MatrixInterface
      * @throws OutOfRangeException
@@ -71,8 +70,7 @@ class Matrix implements MatrixInterface
     public function set(int $i, int $j, float $value): MatrixInterface
     {
         $this->checkCoordinates($i, $j);
-        //for readability outside class, coords are crossed
-        $this->data[$j][$i] = $value;
+        $this->data[$i][$j] = $value;
         return $this;
     }
 
@@ -121,7 +119,7 @@ class Matrix implements MatrixInterface
     {
         foreach ($data as $j => $row) {
             foreach ($row as $i => $value) {
-                $this->set($i, $j, $value);
+                $this->set($j, $i, $value);
             }
         }
         return $this;
