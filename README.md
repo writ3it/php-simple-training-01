@@ -15,10 +15,18 @@ Twoim celem jest zaliczenie wszystkich testów jednostkowych (również tych ozn
 Aby to osiągnąć należy zaimplementować dwie klasy:
 
 - PT01\Operations\Multiplication
-- PT01\Exceptions\InvalidComponentsShapeException
+- PT01\Exceptions\InvalidComponentsShapeException (dodatkowe)
 
+**Pamiętaj o**:
+- solid
+- testowaniu
+- objaśniaj co robisz
+
+#### Zadanie dodatkowe:
 Dodatkowo należy zaimplementować test, który będzie weryfikował czy klasa *Multiplication* rzuca wyjątek *InvalidComponentsShapeException* gdy czynniki mnożenia mają niewłaściwe wymiary. 
 
-Algorytm mnożenie jest opisany tutaj - ["obliczanie z definicji"](https://pl.wikipedia.org/wiki/Mno%C5%BCenie_macierzy#Obliczanie_z_definicji).
+Algorytm mnożenia jest opisany tutaj - ["obliczanie z definicji"](https://pl.wikipedia.org/wiki/Mno%C5%BCenie_macierzy#Obliczanie_z_definicji).
+
+
 
 
