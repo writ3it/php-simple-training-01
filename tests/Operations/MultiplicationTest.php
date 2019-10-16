@@ -8,6 +8,7 @@ use PT01\Matrices\Matrix;
 use PT01\Matrices\MatrixInterface;
 use PT01\Matrices\MatrixShape;
 use PT01\Operations\MatrixResultOperationInterface;
+use PT01\Operations\Multiplication;
 
 /**
  * Class MultiplicationTest
@@ -38,14 +39,14 @@ class MultiplicationTest extends TestCase
             [4, 2]
         ];
 
-        $this->testMultiplication($A, $B, $expected);
+        $this->multiplication($A, $B, $expected);
     }
 
-    private function testMultiplication(array $AData, array $BData, array $expectedResult)
+    private function multiplication(array $AData, array $BData, array $expectedResult)
     {
-        $A = new Matrix(new MatrixShape(3, 2));
+        $A = new Matrix(new MatrixShape(count($AData[0]), count($AData)));
         $A->fillWithArray($AData);
-        $B = new Matrix(new MatrixShape(2, 3));
+        $B = new Matrix(new MatrixShape(count($BData[0]), count($BData)));
         $B->fillWithArray($BData);
 
         /** @var MatrixResultOperationInterface $multiplication */
@@ -77,6 +78,6 @@ class MultiplicationTest extends TestCase
             [-11, -9]
         ];
 
-        $this->testMultiplication($A, $B, $expected);
+        $this->multiplication($A, $B, $expected);
     }
 }

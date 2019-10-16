@@ -46,6 +46,19 @@ class MatrixTest extends TestCase
         $this->checkArrayDiagonalValues($A, 0, 0.5);
     }
 
+    private function checkArrayDiagonalValues(Matrix $A, float $outsideValue, float $diagonalValue)
+    {
+        foreach ($A->getColumnsIndices() as $i) {
+            foreach ($A->getRowsIndices() as $j) {
+                if ($i == $j) {
+                    $this->assertEquals($diagonalValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$diagonalValue}");
+                } else {
+                    $this->assertEquals($outsideValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$outsideValue}");
+                }
+            }
+        }
+    }
+
     /**
      * @throws \PT01\Exceptions\OutOfRangeException
      */
@@ -60,18 +73,16 @@ class MatrixTest extends TestCase
         $this->checkArrayDiagonalValues($A, 0, 0.5);
     }
 
-
-    private function checkArrayDiagonalValues(Matrix $A, float $outsideValue, float $diagonalValue)
+    public function testSetValuesWithoutException()
     {
-        foreach ($A->getColumnsIndices() as $i) {
-            foreach ($A->getRowsIndices() as $j) {
-                if ($i == $j) {
-                    $this->assertEquals($diagonalValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$diagonalValue}");
-                } else {
-                    $this->assertEquals($outsideValue, $A->get($i, $j), "cell [{$i},{$j}] =/= {$outsideValue}");
-                }
-            }
-        }
+        $A = new Matrix(new MatrixShape(3, 4));
+        $A->fillWithArray([
+            [0.5, 0, 0],
+            [0, 0.5, 0],
+            [0, 0, 0.5],
+            [0, 0, 1]
+        ]);
+        $this->assertTrue(TRUE); //we expect no exception here
     }
 
     /**

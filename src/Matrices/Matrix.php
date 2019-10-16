@@ -119,8 +119,8 @@ class Matrix implements MatrixInterface
      */
     public function fillWithArray(array $data): MatrixInterface
     {
-        foreach ($data as $i => $column) {
-            foreach ($column as $j => $value) {
+        foreach ($data as $j => $row) {
+            foreach ($row as $i => $value) {
                 $this->set($i, $j, $value);
             }
         }
