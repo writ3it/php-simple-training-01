@@ -4,6 +4,8 @@ namespace PT01\Matrices;
 
 interface MatrixInterface
 {
+    public function __construct(MatrixShape $shape);
+
     /**
      * Get value of i,j cell in matrix.
      * @param int $i
