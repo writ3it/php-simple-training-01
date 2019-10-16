@@ -19,7 +19,8 @@
   "autoload": {
     "psr-4": {
       "PT01\\Tests\\": "tests/",
-      "PT01\\": "src/"
+      "PT01\\Matrices\\": "src/Matrices",
+      "PT01\\Exceptions\\": "src/Exceptions"
     }
   },
   "scripts": {

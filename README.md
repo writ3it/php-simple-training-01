@@ -1,6 +1,13 @@
 # php-simple-training-01
 Simple php training app
 
+## Getting started
+
+1. Clone this repository.
+2. Open repository with your favorite IDE.
+3. Install dependencies.
+4. See a Task section.
+
 ## Testing
 
 Test script will skip tests methods annotaed with @group notImplementedYetTest.
